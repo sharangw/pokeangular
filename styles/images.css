@@ -9,9 +9,12 @@ body {
 }
 
 .place-name {
+	font-family: 'Alegreya Sans SC', fantasy;
+	font-weight: bold;
+	color: red;
 	position: absolute;
-	left: 300px;
-	top: 300px;
+	left: 340px;
+	top: 260px;
 	z-index:-1;
 }
 
