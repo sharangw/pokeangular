@@ -17,6 +17,7 @@
 		<div data-ng-controller="Data2Controller as data2">
 			<div data-ng-controller="GetChoiceController as ch1">
 				<div data-ng-controller="ShowStatsController">
+					{{data1.getPoke().id}} {{data2.getPoke().id}}
 					<div data-ng-controller="ImgCropController as img1">
 						<div data-ng-controller="ImgCropController as img2">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -49,9 +50,9 @@
 								<strong>Total Experience: {{data1.getPoke().exp + data2.getPoke().exp}}</strong> <br/> 
 								<strong>Total Stats: {{data1.getPoke().stats + data2.getPoke().stats}} </strong> <br/><br/>
 								<div class = "centerize">
-									<h5>Name your creation</h5>
+									<h3>Name your creation</h3>
 									<input type="text" data-ng-model="name"/>
-									<h2 data-ng-bind="name"></h2>
+									<h6 data-ng-bind="name"></h6>
 								</div>
 							</div>
 						</div> <!-- ImgCropController -->
