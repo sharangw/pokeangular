@@ -1,26 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="PokeModule">
 <head>
 <meta charset="UTF-8">
-<title>Poke Something</title>
+<title>Pokémon Creator App</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<style></style>
+<link rel="stylesheet" type="text/css" href="styles/design.css">
 </head>
 <body>
+			
+<nav class="navbar navbar-default navbar-inverse" role="navigation" >
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" data-ui-sref="home">Kanto</a>
+    </div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a data-ui-sref="create">Create</a></li>
+        <li><a data-ui-sref="result">Result</a></li>
+      </ul>
+    </div> <!-- /.navbar-collapse -->
+  </div> <!-- /.container-fluid -->
+</nav> 
 
-<h1>HEY YOU </h1>
+  <data-ui-view></data-ui-view>
   
-    <div ng-app="">
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/2.0.1/ui-bootstrap-tpls.min.js"></script>
+  <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
   
-    <input type="text" ng-model="dog"/>
-    
-    <h3>Hello {{dog}}!!</h3>
-    
-    <h3 ng-bind="dog"></h3>
+  <script src="app.js"></script>
+  <script src="controllers.js"></script>
+  <script src="services.js"></script>
   
-  </div>
-
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-
 </body>
 </html>
