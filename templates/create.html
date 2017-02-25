@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Poke - CREATE</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!-- Custom CSS -->
+<link rel="stylesheet" type="text/css" href="styles/design.css">
+</head>
+<body>
+		
+		<div class="container-fluid centerize">
+			<h1>Create your own Pokémon!</h1>
+		</div>
+		
+		<!-- Have user choose how many diff pokes to use for creation -->
+<!-- 		<div data-ng-controller="CreateCtrl as num" class="container-fluid centerize"> -->
+<!-- 			<h3>{{num.no}}</h3>		 -->
+<!-- 			<button data-ng-click = "num.doIt()">JUST DO IT!</button> -->
+<!-- 		</div> -->
+
+		<br/><br/>
+		
+	<div class="container-fluid">
+		<div class="row">
+		
+			<div data-ng-controller="ImgController" class="col-md-4">
+			   <div data-ng-controller="PokeController as poke" >
+				  <div data-ng-controller="Data1Controller as data">
+					<h4>The head of a</h4> &nbsp;
+					<input type="text" data-ng-model="input" size=14>
+					<button data-ng-click = "showImage(input); poke.getPokemon(input); data.setPoke(input,2)" class = "btn btn-success">Get Pokémon</button>
+					<div data-ng-show = "poke.pokemon" class = "centerize">
+						<b>{{poke.pokemon.name}}</b>
+					</div>
+					<div >
+						
+						<img data-ng-src="{{image}}"/>
+					</div>				
+				</div> <!-- end DataController -->
+			</div>  <!-- end PokeController -->
+		</div> <!-- end ImgCropController -->
+			
+	
+		<div data-ng-controller="ImgController" class="col-md-4">
+		  <div data-ng-controller="PokeController as poke" >
+			  <div data-ng-controller="Data2Controller as data">
+					<h4>The body of a</h4> &nbsp;
+					<input type="text" data-ng-model="input" size=14>
+					<button data-ng-click="showImage(input); poke.getPokemon(input); data.setPoke(input,2)" class = "btn btn-success">Get Pokémon</button>
+					<div data-ng-show = "poke.pokemon" class = "centerize">
+						<b>{{poke.pokemon.name}}</b>
+					</div>
+					<div >
+						<img data-ng-src="{{image}}"/>
+					</div>	
+				</div> <!-- end DataController -->
+			</div> <!-- end PokeController -->
+		</div>  <!-- end ImgCropController -->
+			
+		<div data-ng-controller="ChoiceController as choice">
+			<div class="col-md-4"> Give it a...
+			<input type="checkbox" data-ng-model="myVar1" data-ng-true-value="'YES'" 
+								   data-ng-false-value="'NO'" data-ng-click="choice.check1()"> Lightsaber &nbsp;
+			<input type="checkbox" data-ng-model="myVar2" data-ng-true-value="'YES'" 
+								   data-ng-false-value="'NO'" data-ng-click="choice.check2()"> Batarang  &nbsp;
+			<input type="checkbox" data-ng-model="myVar3" data-ng-true-value="'YES'" 
+								   data-ng-false-value="'NO'" data-ng-click="choice.check3()"> Gun &nbsp;
+			<input type="checkbox" data-ng-model="myVar4" data-ng-true-value="'YES'" 
+								   data-ng-false-value="'NO'" data-ng-click="choice.check4()"> WildCard
+
+			</div>
+		</div>
+
+			
+		   <!-- Not using right now -->
+<!-- 			<div data-ng-controller="Img3Controller as img3" class="col-md-2"> -->
+<!-- 				<div> -->
+<!-- 					<h4>Part 3</h4> -->
+<!-- 					<input type="text" data-ng-model="input" size = "5"> -->
+<!-- 					<button data-ng-click="img3.getPokemon(input)">Get Pokémon</button> -->
+<!-- 					<div data-ng-show="img3.pokemon"> -->
+<!-- 						<div>{{img3.pokemon.name}}</div> -->
+<!-- 						<img alt="Pokemon3 Image" data-ng-src="{{img3.pokemon.sprites.front_default}}" /> -->
+<!-- 					</div> -->
+<!-- 				</div> -->
+<!-- 			</div>  -->
+		   <!-- Not using right now -->
+			
+		</div> <!-- end row -->
+	</div> <!-- end container -->
+
+
+
+
+
+</body>
+</html>
