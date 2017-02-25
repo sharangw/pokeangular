@@ -8,7 +8,7 @@
 <body>
 
 <div class = "container-fluid centerize">
-	<h1>Your Creation</h1>
+	<h1>My Creation</h1>
 </div>
 
 <br/>
@@ -17,21 +17,20 @@
 		<div data-ng-controller="Data2Controller as data2">
 			<div data-ng-controller="GetChoiceController as ch1">
 				<div data-ng-controller="ShowStatsController">
-					{{data1.getPoke().id}} {{data2.getPoke().id}}
 					<div data-ng-controller="ImgCropController as img1">
 						<div data-ng-controller="ImgCropController as img2">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button
 								data-ng-click="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck(); unhideStats = !unhideStats"
 								class="btn btn-danger">Show Me!</button>
-							<div class = "centerize">
-								<h2 data-ng-bind="name"></h2>
+							<div class = "place-name">
+								<h1 data-ng-bind="name"></h1>
 							</div>
 							<div class="crophead">
-								<img data-ng-src="{{img1.image}}" alt="Choose a poke!" />
+								<img data-ng-src="{{img1.image}}" />
 							</div>
 							<div class="cropbottom">
-								<img data-ng-src="{{img2.image}}" alt="Choose a poke!" />
+								<img data-ng-src="{{img2.image}}" />
 							</div>
 							<div class="place-saber">
 								<img data-ng-src="{{ch1.image1}}" />
@@ -45,6 +44,7 @@
 							<div class="crop-wildcard">
 								<img data-ng-src="{{ch1.image4}}" />
 							</div>
+							<br/>
 							<div data-ng-show="unhideStats" class="stats">
 								<strong>Total Experience: {{data1.getPoke().exp + data2.getPoke().exp}}</strong> <br/> 
 								<strong>Total Stats: {{data1.getPoke().stats + data2.getPoke().stats}} </strong> <br/><br/>
