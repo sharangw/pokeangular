@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+
+body {
+	background-color: peachpuff;
+}
+
+h4, h5 {
+	display: inline;
+}
+
+.left {
+	text-align: left;
+}
+
+.centerize {
+	text-align: center;
+}
+
+.right {
+	text-align: right;
+}
+
+
+
+
+.boxborder {
+	position: absolute;
+    right: 250px;
+    width: 200px;
+    height: 200px; 
+	
+	border: 2px solid #04c966;
+	border-style: ridge;
+	
+}
+
+.hidden {	
+	display: none;
+}
+
