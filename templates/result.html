@@ -18,7 +18,7 @@
 			<div data-ng-controller="GetChoiceController as ch1">
 				<div data-ng-controller="ShowStatsController">
 					{{data1.getPoke().id}} {{data2.getPoke().id}}
-					<div data-ng-controller="ImgCropController as img1">
+					<div data-ng-controller="ImgCropController as img1" id = "printable">
 						<div data-ng-controller="ImgCropController as img2">
 							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<button
@@ -47,12 +47,16 @@
 							</div>
 							<br/>
 							<div data-ng-show="unhideStats" class="stats">
-								<strong>Total Experience: {{data1.getPoke().exp + data2.getPoke().exp}}</strong> <br/> 
-								<strong>Total Stats: {{data1.getPoke().stats + data2.getPoke().stats}} </strong> <br/><br/>
-								<div class = "centerize">
+								<strong>Combined Stastics:</strong> <br/>
+								<strong>{{data1.getPoke().exp + data2.getPoke().exp}} experience points</strong> <br/> 
+								<strong>{{data1.getPoke().stats + data2.getPoke().stats}} health points</strong> <br/>
+								<strong>{{data1.getPoke().hseight + data2.getPoke().height}} meters</strong> <br/>
+								<strong>{{data1.getPoke().weight + data2.getPoke().weight}} kilograms</strong> <br/> <br/>
+								<div>
 									<h3>Name your creation</h3>
 									<input type="text" data-ng-model="name"/>
-									<h6 data-ng-bind="name"></h6>
+									<h6 data-ng-bind="name"></h6> <br/>
+									<button data-ng-click="printStats('printable')">Print</button>
 								</div>
 							</div>
 						</div> <!-- ImgCropController -->
