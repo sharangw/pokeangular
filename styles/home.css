@@ -55,7 +55,7 @@ header h1 {
 .crop-head-two {	
 	position: absolute;
 	clip: rect(0px,475px,200px,0px);    
-	left:650px;
+	left:610px;
 	top:520px;
 	z-index:-1;
 }
