@@ -144,10 +144,3 @@ header h1 {
 	top:1800px; 
 	z-index:-1;
 }
-
-.info-buttons {
-	position: absolute;   
-	right:160px;
-	top:1800px; 
-	z-index:-1;
-}
