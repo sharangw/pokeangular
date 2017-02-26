@@ -13,8 +13,8 @@ body {
 	font-weight: bold;
 	color: red;
 	position: absolute;
-	left: 340px;
-	top: 260px;
+	left: 540px;
+	top: 140px;
 	z-index:-1;
 }
 
@@ -22,7 +22,7 @@ body {
 	position: absolute;
 	clip: rect(0px,475px,200px,0px);    
 	left:450px;
-	top:140px;
+	top:200px;
 	z-index:-1;
 }
 
@@ -30,14 +30,14 @@ body {
 	position: absolute;   
 	clip: rect(300px,475px,475px,0px);
 	left:450px;
-	top:40px; 
+	top:100px; 
 	z-index:-1;
 }
 
 .place-saber {
 	position: absolute;   
 	left:770px;
-	top:200px; 
+	top:260px; 
 	z-index:-1;
 	
 }
@@ -45,29 +45,30 @@ body {
 .place-bat {
 	position: absolute;   
 	left:370px;
-	top:150px; 
+	top:210px; 
 	z-index:-1;
 }
 
 .place-machine-gun {
 	position: absolute;   
 	left:370px;
-	top:300px; 
+	top:360px; 
 	z-index:-1;
 }
 
 .crop-wildcard {
 	position: absolute;  
 	clip: rect(0px,475px,200px,0px);     
-	left:520px;
-	top:140px; 
+	left:570px;
+	top:200px; 
 	z-index:-1;
 }
 
 .stats {
 	position: absolute; 
 	left:630px;
-	top:500px; 
+	top:560px; 
 }
+
 
 
