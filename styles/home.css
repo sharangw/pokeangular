@@ -124,13 +124,6 @@ header h1 {
 	
 }
 
-.placeBat {
-	position: absolute;   
-	left:380px;
-	top:1330px; 
-	z-index:-1;
-}
-
 .placeMachineGun {
 	position: absolute;   
 	left:320px;
