@@ -38,12 +38,16 @@ angular.module("PokeModule").controller("PokeController", function(MyPokeService
 
 angular.module("PokeModule").controller("Data1Controller", function(MyData1Service,$http) {
 	
-	this.setPoke = function(input, exp) {
+	this.setPoke = function(input) {
 		
 		$http({
 			  method:"GET",
 			  url:"https://pokeapi.co/api/v2/pokemon/" + input + "/"
 		}).then(function(response){
+			
+			var halfWeight = response.data.weight/20;
+			
+			var halfHeight = response.data.height/20;
 			
 			var totalStats = 0;
 			
@@ -52,7 +56,7 @@ angular.module("PokeModule").controller("Data1Controller", function(MyData1Servi
 				totalStats += response.data.stats[i].base_stat;
 			}
 			
-			MyData1Service.setData(response.data.id, response.data.base_experience, totalStats);	
+			MyData1Service.setData(response.data.id, response.data.base_experience, totalStats, halfWeight, halfHeight);	
 		});	
 		
 		
@@ -67,12 +71,16 @@ angular.module("PokeModule").controller("Data1Controller", function(MyData1Servi
 
 angular.module("PokeModule").controller("Data2Controller", function(MyData2Service,$http) {
 	
-	this.setPoke = function(input,exp) {
+	this.setPoke = function(input) {
 		
 		$http({
 			  method:"GET",
 			  url:"https://pokeapi.co/api/v2/pokemon/" + input + "/"
 		}).then(function(response){
+			
+			var halfWeight = response.data.weight/20;
+			
+			var halfHeight = response.data.height/20;
 			
 			var totalStats = 0;
 			
@@ -81,7 +89,7 @@ angular.module("PokeModule").controller("Data2Controller", function(MyData2Servi
 				totalStats += response.data.stats[i].base_stat;
 			}
 			
-			MyData2Service.setData(response.data.id, response.data.base_experience, totalStats);	
+			MyData2Service.setData(response.data.id, response.data.base_experience, totalStats, halfWeight, halfHeight);	
 		});	
 	}
 	
@@ -237,6 +245,16 @@ angular.module("PokeModule").controller("ShowStatsController", function($scope) 
 	
 	$scope.unhideStats = false;
 	
+	$scope.printStats = function(divName) {
+		
+		 var printContents = document.getElementById(divName).innerHTML;
+		 var popupWin = window.open('', '_blank', 'width=300,height=300');
+		 popupWin.document.open();
+		 popupWin.document.write('<html><head><link rel="stylesheet" type="text/css" href="styles/image.css" /></head><body onload="window.print()">' + printContents + '</body></html>');
+		 popupWin.document.close();
+		
+	}
+	
 });
 
 angular.module("PokeModule").controller("TestController", function($scope, MySimpleService) {
@@ -248,3 +266,8 @@ angular.module("PokeModule").controller("TestController", function($scope, MySim
 angular.module("PokeModule").controller("ResultCtrl", function() {
 	
 });
+
+
+
+
+
