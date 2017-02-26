@@ -11,13 +11,6 @@
 		<div class="container-fluid centerize">
 			<h1>Create your own Pokémon!</h1>
 		</div>
-		
-		<!-- Have user choose how many diff pokes to use for creation -->
-<!-- 		<div data-ng-controller="CreateCtrl as num" class="container-fluid centerize"> -->
-<!-- 			<h3>{{num.no}}</h3>		 -->
-<!-- 			<button data-ng-click = "num.doIt()">JUST DO IT!</button> -->
-<!-- 		</div> -->
-
 		<br/><br/>
 		
 	<div class="container-fluid">
@@ -28,12 +21,11 @@
 				  <div data-ng-controller="Data1Controller as data">
 					<h4>The head of a</h4> &nbsp;
 					<input type="text" data-ng-model="input" size=14>
-					<button data-ng-click = "showImage(input); poke.getPokemon(input); data.setPoke(input,2)" class = "btn btn-success">Get Pokémon</button>
+					<button data-ng-click = "showImage(input); poke.getPokemon(input); data.setPoke(input)" class = "btn btn-success">Get Pokémon</button>
 					<div data-ng-show = "poke.pokemon" class = "centerize">
-						<b>{{poke.pokemon.name}}</b>
+						<b>You chose {{poke.pokemon.name}}</b>
 					</div>
-					<div >
-						
+					<div >						
 						<img data-ng-src="{{image}}"/>
 					</div>				
 				</div> <!-- end DataController -->
@@ -46,9 +38,9 @@
 			  <div data-ng-controller="Data2Controller as data">
 					<h4>The body of a</h4> &nbsp;
 					<input type="text" data-ng-model="input" size=14>
-					<button data-ng-click="showImage(input); poke.getPokemon(input); data.setPoke(input,2)" class = "btn btn-success">Get Pokémon</button>
+					<button data-ng-click="showImage(input); poke.getPokemon(input); data.setPoke(input)" class = "btn btn-success">Get Pokémon</button>
 					<div data-ng-show = "poke.pokemon" class = "centerize">
-						<b>{{poke.pokemon.name}}</b>
+						<b>You chose {{poke.pokemon.name}}</b>
 					</div>
 					<div >
 						<img data-ng-src="{{image}}"/>
