@@ -16,12 +16,14 @@ angular.module("PokeModule").service("MyData1Service", function() {
 	
 	var pokes = {};
 	
-	this.setData = function(id, exp, stats) {
+	this.setData = function(id, exp, stats, weight, height) {
 		
 		pokes = {
 			'id': id,
 			'exp': exp,
-			'stats': stats
+			'stats': stats,
+			'weight': weight,
+			'height': height
 		};
 	}
 	
@@ -37,12 +39,14 @@ angular.module("PokeModule").service("MyData2Service", function() {
 	
 	var pokes = {};
 	
-	this.setData = function(id, exp, stats) {
+	this.setData = function(id, exp, stats, weight, height) {
 		
 		pokes = {
 			'id': id,
 			'exp': exp,
-			'stats': stats
+			'stats': stats,
+			'weight': weight,
+			'height': height
 		};
 	}
 	
