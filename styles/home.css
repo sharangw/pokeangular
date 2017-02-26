@@ -35,3 +35,119 @@ header h1 {
 	font-family: sans-serif;
 	
 }
+
+.crop-head-one {	
+	position: absolute;
+	clip: rect(0px,475px,200px,0px);    
+	left:150px;
+	top:560px;
+	z-index:-1;
+}
+
+.crop-bottom-one {
+	position: absolute;   
+	clip: rect(300px,475px,475px,0px);
+	left:150px;
+	top:420px; 
+	z-index:-1;
+}
+
+.crop-head-two {	
+	position: absolute;
+	clip: rect(0px,475px,200px,0px);    
+	left:650px;
+	top:520px;
+	z-index:-1;
+}
+
+.crop-bottom-two {
+	position: absolute;   
+	clip: rect(300px,475px,475px,0px);
+	left:650px;
+	top:420px; 
+	z-index:-1;
+}
+
+.crop-head-three {	
+	position: absolute;
+	clip: rect(0px,475px,200px,0px);    
+	left:150px;
+	top:920px;
+	z-index:-1;
+}
+
+.crop-bottom-three {
+	position: absolute;   
+	clip: rect(302px,475px,475px,0px);
+	left:123px;
+	top:818px; 
+	z-index:-1;
+}
+
+.crop-head-four {	
+	position: absolute;
+	clip: rect(0px,475px,200px,0px);    
+	left:700px;
+	top:920px;
+	z-index:-1;
+}
+
+.crop-bottom-four {
+	position: absolute;   
+	clip: rect(300px,475px,475px,0px);
+	left:650px;
+	top:820px; 
+	z-index:-1;
+}
+
+.crop-head-five {	
+	position: absolute;
+	clip: rect(0px,475px,200px,0px);    
+	left:450px;
+	top:1330px;
+	z-index:-1;
+}
+
+.crop-bottom-five {
+	position: absolute;   
+	clip: rect(300px,475px,475px,0px);
+	left:400px;
+	top:1230px; 
+	z-index:-1;
+}
+
+.placeSaber {
+	position: absolute;   
+	left:650px;
+	top:1420px; 
+	z-index:-1;
+	
+}
+
+.placeBat {
+	position: absolute;   
+	left:380px;
+	top:1330px; 
+	z-index:-1;
+}
+
+.placeMachineGun {
+	position: absolute;   
+	left:320px;
+	top:1510px; 
+	z-index:-1;
+}
+
+.page-views {
+	position: absolute;   
+	right:650px;
+	top:1800px; 
+	z-index:-1;
+}
+
+.info-buttons {
+	position: absolute;   
+	right:160px;
+	top:1800px; 
+	z-index:-1;
+}
