@@ -1,4 +1,4 @@
-# pokeangular
+# Pokemon Creator
 
 ## Project
 * The goal of this project was to create an AngularJS web application using data from the RESTful Pokemon API located here: https://pokeapi.co/
