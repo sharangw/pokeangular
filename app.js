@@ -32,9 +32,16 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		controller: 'ResultCtrl'
 	};
 	
+	var fightState = {
+		name: 'fight',
+		url: '/fight',
+		templateUrl: 'templates/fight.html',
+	};
+	
 	$stateProvider.state(homeState);
 	$stateProvider.state(createState);
 	$stateProvider.state(resultState);
+	$stateProvider.state(fightState);
 	
 	//default routing
 	$urlRouterProvider.otherwise('/');
