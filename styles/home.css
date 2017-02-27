@@ -137,3 +137,12 @@ header h1 {
 	top:1800px; 
 	z-index:-1;
 }
+
+.info-buttons {
+  	padding: 0px;
+   	width: 100%;
+   	margin: 0;
+    	position: relative;
+    	left: 380px;
+    	top: 1270px;
+}
