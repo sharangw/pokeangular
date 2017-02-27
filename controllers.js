@@ -240,6 +240,36 @@ angular.module("PokeModule").controller("GetChoiceController", function(MyChoice
 	}
 	
 });
+
+angular.module("PokeModule").controller("OpponentController", function() {
+	
+	this.oppImage = "";
+	
+	this.showTheOpponent = function() {		
+	
+		this.oppImage = 'pics/'+randomNum()+'.png';
+ 		
+	}
+	
+	function randomNum() {
+		
+		return Math.floor(Math.random() * 720);
+	}
+	
+	this.battle = function() {
+		
+		if (randomNum() %2 === 0) {
+			
+			this.winner = "You Win!";
+			
+		} else {
+			
+			this.winner = "You Lose!";
+		}
+		
+	}
+	
+});
 	
 angular.module("PokeModule").controller("ShowStatsController", function($scope) {
 	
