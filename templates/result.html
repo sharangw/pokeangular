@@ -19,10 +19,11 @@
 				<div data-ng-controller="ShowStatsController">
 					<div data-ng-controller="ImgCropController as img1" id = "printable">
 						<div data-ng-controller="ImgCropController as img2">
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						  <div class = "place-button">
 							<button
 								data-ng-click="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck(); unhideStats = !unhideStats"
 								class="btn btn-danger">Show Me!</button>
+						  </div>
 							<div class = "place-name">
 								<h1 data-ng-bind="name"></h1>
 							</div>
@@ -49,8 +50,8 @@
 								<strong>Combined Statistics:</strong> <br/>
 								<strong>{{data1.getPoke().exp + data2.getPoke().exp}} experience points</strong> <br/> 
 								<strong>{{data1.getPoke().stats + data2.getPoke().stats}} health points</strong> <br/>
-								<strong>{{data1.getPoke().height + data2.getPoke().height}} meters</strong> <br/>
-								<strong>{{data1.getPoke().weight + data2.getPoke().weight}} kilograms</strong> <br/> <br/>
+								<strong>{{data1.getPoke().height + data2.getPoke().height | number : 2}} meters</strong> <br/>
+								<strong>{{data1.getPoke().weight + data2.getPoke().weight | number : 2}} kilograms</strong> <br/> <br/>
 								<div>
 									<h3>Name your creation</h3>
 									<input type="text" data-ng-model="name"/>
