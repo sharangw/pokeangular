@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Poke - FIGHT</title>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="styles/fight.css">
+</head>
+<body>
+
+<div class = "container-fluid centerize">
+	<h1>Fight with it</h1>
+</div>
+
+<div data-ng-controller="Data1Controller as data1">
+	<div data-ng-controller="Data2Controller as data2">
+		<div data-ng-controller="GetChoiceController as ch1">
+			<div data-ng-controller="ShowStatsController">
+				<div data-ng-controller="ImgCropController as img1" id = "printable">
+					<div data-ng-controller="ImgCropController as img2">
+						<div data-ng-show="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck();">
+						</div>
+							<div class = "place-name">
+								<h1 data-ng-bind="name"></h1>
+							</div>
+							<div class="crophead">
+								<img data-ng-src="{{img1.image}}" alt="Choose a pokemon!" />
+							</div>
+							<div class="cropbottom">
+								<img data-ng-src="{{img2.image}}" />
+							</div>
+							<div class="place-saber">
+								<img data-ng-src="{{ch1.image1}}" />
+							</div>
+							<div class="place-bat">
+								<img data-ng-src="{{ch1.image2}}" />
+							</div>
+							<div class="place-machine-gun">
+								<img data-ng-src="{{ch1.image3}}" />
+							</div>
+							<div class="crop-wildcard1">
+								<img data-ng-src="{{ch1.image4}}" />
+							</div>
+							
+						<div data-ng-controller="OpponentController as opp">
+							<div data-ng-show="opp.showTheOpponent()">
+								<div class="crop-wildcard2">
+									<img data-ng-src="{{opp.oppImage}}" />
+								</div>
+								
+								<div class = "battle-button">
+									<button data-ng-click="opp.battle()" class = "btn btn-danger">BATTLE</button>
+								</div>
+								
+								<div class = "place-winner">
+									{{opp.winner}}
+								</div>
+								
+							</div>														
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+</body>
+</html>
