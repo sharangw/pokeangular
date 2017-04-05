@@ -3,7 +3,7 @@
 <meta charset="UTF-8">
 <title>Poke - RESULT</title>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-<link rel="stylesheet" type="text/css" href="styles/images.css">
+<link rel="stylesheet" type="text/css" href="styles/result.css">
 </head>
 <body>
 
@@ -17,14 +17,14 @@
 		<div data-ng-controller="Data2Controller as data2">
 			<div data-ng-controller="GetChoiceController as ch1">
 				<div data-ng-controller="ShowStatsController">
-					<div data-ng-controller="ImgCropController as img1" id = "printable">
+					<div data-ng-controller="ImgCropController as img1">
 						<div data-ng-controller="ImgCropController as img2">
 						  <div class = "place-button">
 							<button
 								data-ng-click="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck(); unhideStats = !unhideStats"
 								class="btn btn-danger">Show Me!</button>
 						  </div>
-							<div class = "place-name">
+							<div data-ng-controller="NameController as nam" class = "place-name">
 								<h1 data-ng-bind="name"></h1>
 							</div>
 							<div class="crophead">
@@ -51,13 +51,12 @@
 								<strong>{{data1.getPoke().exp + data2.getPoke().exp}} experience points</strong> <br/> 
 								<strong>{{data1.getPoke().stats + data2.getPoke().stats}} health points</strong> <br/>
 								<strong>{{data1.getPoke().height + data2.getPoke().height | number : 2}} meters</strong> <br/>
-								<strong>{{data1.getPoke().weight + data2.getPoke().weight | number : 2}} kilograms</strong> <br/> <br/>
-								<div>
-								 
+								<strong>{{data1.getPoke().weight + data2.getPoke().weight | number : 1}} kilograms</strong> <br/> <br/>
+								<div data-ng-controller="NameController as nam">								 
 									<h3>Name your creation</h3>
 									<input type="text" data-ng-model="name"/>
-									<h6 data-ng-bind="name"></h6> <br/>
-								  
+									<br/>									
+								  	<button data-ng-click="nam.setName(name)" class="btn btn-success">Finalize</button>
 								</div>
 							</div>
 						</div> <!-- ImgCropController -->
