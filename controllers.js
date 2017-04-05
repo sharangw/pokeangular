@@ -1,19 +1,4 @@
 
-angular.module("PokeModule").controller("CreateCtrl", function() {
-	
-	this.no = 0;
-	
-	this.doIt = function() {
-		
-		if (this.no === 4) {
-			this.no = 4;
-		} else {
-			this.no++;
-		}	
-		
-	}	
-	
-});
 
 angular.module("PokeModule").controller("PokeController", function(MyPokeService) {
 	
