@@ -8,53 +8,86 @@
 <body>
 
 <div class = "container-fluid centerize">
-	<h1>Fight with it</h1>
+	<h1>Fight Club</h1>
 </div>
 
 <div data-ng-controller="Data1Controller as data1">
-	<div data-ng-controller="Data2Controller as data2">
+  <div data-ng-controller="Data2Controller as data2">
+	 <div data-ng-controller="NameController as name">
 		<div data-ng-controller="GetChoiceController as ch1">
 			<div data-ng-controller="ShowStatsController">
-				<div data-ng-controller="ImgCropController as img1" id = "printable">
-					<div data-ng-controller="ImgCropController as img2">
-						<div data-ng-show="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck();">
-						</div>
-							<div class = "place-name">
-								<h1 data-ng-bind="name"></h1>
+			   <div data-ng-controller="ImgCropController as img1">
+				  <div data-ng-controller="ImgCropController as img2">
+					<div data-ng-controller="OpponentController as opp">
+					  <div data-ng-controller="ShowOpponentController">		
+					   <div class = "place-fight-button">	
+					   	 <button
+					   	 	data-ng-click="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck(); unhideOpp = !unhideOpp; name.getName()"
+					   	 	class="btn btn-danger">Fight with it!</button>						   	 
+						 </div>						  
+						  	
+							<div class="crophead" id = "aniNewHead">
+								<img data-ng-src="{{img1.image}}" alt="Create a pokemon!" />
 							</div>
-							<div class="crophead">
-								<img data-ng-src="{{img1.image}}" alt="Choose a pokemon!" />
-							</div>
-							<div class="cropbottom">
+							<div class="cropbottom" id = "aniNewBot">
 								<img data-ng-src="{{img2.image}}" />
 							</div>
-							<div class="place-saber">
+							<div class="place-saber" id = "aniNewSaber">
 								<img data-ng-src="{{ch1.image1}}" />
 							</div>
-							<div class="place-bat">
+							<div class="place-bat" id = "aniNewBat">
 								<img data-ng-src="{{ch1.image2}}" />
 							</div>
-							<div class="place-machine-gun">
+							<div class="place-machine-gun" id = "aniNewGun">
 								<img data-ng-src="{{ch1.image3}}" />
 							</div>
-							<div class="crop-wildcard1">
+							<div class="crop-wildcard1" id = "aniNewWild">
 								<img data-ng-src="{{ch1.image4}}" />
-							</div>
-							
-						<div data-ng-controller="OpponentController as opp">
-							<div data-ng-show="opp.showTheOpponent()">
-								<div class="crop-wildcard2">
+							</div>	
+						  	
+							<div data-ng-show="unhideOpp">
+								
+								<div class = "place-name">
+									{{name.getName()}}
+								</div>
+								
+								<div class = "options">
+									
+									<button data-ng-click = "opp.showSaber()" class = "btn btn-info">Light Saber</button>
+									
+									<br/><br/><br/>
+								
+									<button data-ng-click = "opp.showBat()" class = "btn btn-info">Batarang</button>
+									
+									<br/><br/><br/>
+								
+									<button data-ng-click = "opp.showGun()" class = "btn btn-info">Machine Gun</button>
+									
+									<br/><br/><br/>
+								
+									<button data-ng-click = "opp.showWild()" class = "btn btn-info">WildCard</button>
+								</div>
+								
+								<br/><br/><br/><br/>
+								
+								<div class="begin-button">
+									<button data-ng-click = "opp.showOpponent()" class = "btn btn-warning">Choose Opponent</button>
+								</div>
+								
+								<div class="opponent" id="aniOpp">
 									<img data-ng-src="{{opp.oppImage}}" />
 								</div>
 								
 								<div class = "battle-button">
-									<button data-ng-click="opp.battle()" class = "btn btn-danger">BATTLE</button>
+									<button data-ng-click="opp.prepareForBattle(data1.getPoke().exp + data2.getPoke().exp)" class = "btn btn-danger">BATTLE</button>
+									<br/><br/>Double Click to see them spaz out!
 								</div>
 								
 								<div class = "place-winner">
 									{{opp.winner}}
 								</div>
-								
+							  </div>
+							  
 							</div>														
 						</div>
 					</div>
@@ -62,6 +95,7 @@
 			</div>
 		</div>
 	</div>
+  </div>
 </div>
 
 
