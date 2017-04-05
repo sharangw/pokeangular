@@ -22,14 +22,12 @@ app.config(function($stateProvider, $urlRouterProvider) {
 		name: 'create',
 		url: '/create',
 		templateUrl: 'templates/create.html',
-		controller: 'CreateCtrl'
 	};
 	
 	var resultState = {
 		name: 'result',
 		url: '/result',
 		templateUrl: 'templates/result.html',
-		controller: 'ResultCtrl'
 	};
 	
 	var fightState = {
