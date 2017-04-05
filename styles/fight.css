@@ -8,6 +8,33 @@ body {
 	text-align: center;
 }
 
+.place-fight-button {
+    padding: 0px;
+    width: 100%;
+    margin: 0;
+    position: relative;
+    top: -45px;
+    left: 413px;
+}
+
+.options {
+	
+    position: relative;
+    top: 25px;
+    left: 50px;
+	
+}
+
+.begin-button {
+	padding: 15px;
+    width: 100%;
+    margin: -26px;
+    position: relative;
+    top: -350px;
+    left: 1032px;	
+	
+}
+
 .crophead {	
 	position: absolute;
 	clip: rect(0px,475px,200px,0px);    
@@ -59,14 +86,25 @@ body {
     width: 100%;
     margin: 0;
     position: relative;
-    top: 300px;
+    top: 50px;
     left: 600px;
 }
 
-.crop-wildcard2 {
+.opponent {
 	position: absolute;    
 	left:670px;
-	top:200px; 
+	top:120px; 
+	z-index:-1;
+}
+
+.place-name {
+	font-family: 'Alegreya Sans SC', fantasy;
+	font-weight: bold;
+	color: red;
+	font-size: xx-large;
+	position: absolute;    
+	left:300px;
+	top:170px; 
 	z-index:-1;
 }
 
