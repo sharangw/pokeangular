@@ -55,6 +55,22 @@ angular.module("PokeModule").service("MyData2Service", function() {
 		return pokes;
 	}
 	
+});
+
+angular.module("PokeModule").service("MyNameService", function() {
+	
+	var creationName = "";
+	
+	this.setData = function(name) {		
+		
+		creationName = name;
+		console.log(creationName);
+	}
+	
+	this.getData = function() {
+		
+		return creationName;
+	}
 	
 });
 
