@@ -74,18 +74,29 @@
 									<button data-ng-click = "opp.showOpponent()" class = "btn btn-warning">Choose Opponent</button>
 								</div>
 								
-								<div class="opponent" id="aniOpp">
+								<div class="opponent-name">
+									{{opp.oppName}}
+								</div>
+								
+								<div class="opponent" id="aniOpp">									
 									<img data-ng-src="{{opp.oppImage}}" />
 								</div>
 								
+								<div class="heart" id ="aniHeart">
+									<img data-ng-src="{{opp.heart}}" />
+								</div>
 								<div class = "battle-button">
-									<button data-ng-click="opp.prepareForBattle(data1.getPoke().exp + data2.getPoke().exp)" class = "btn btn-danger">BATTLE</button>
-									<br/><br/>Double Click to see them spaz out!
+									<button data-ng-click="opp.prepareForBattle(data1.getPoke().exp + data2.getPoke().exp)" class = "btn btn-danger">BATTLE</button>									
 								</div>
 								
 								<div class = "place-winner">
 									{{opp.winner}}
 								</div>
+								
+								<div class ="place-points">
+									{{opp.points}}
+								</div>
+								
 							  </div>
 							  
 							</div>														
@@ -98,6 +109,18 @@
   </div>
 </div>
 
+<!-- Sounds: -->
+<div>
+	<audio id="battle" loop="true">
+		<source src="sounds/battle.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="gun">
+		<source src="sounds/gun.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="kiss"> 
+		<source src="sounds/kiss.mp3" type="audio/mpeg">
+	</audio>
+</div>
 
 </body>
 </html>
