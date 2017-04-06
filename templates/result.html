@@ -17,9 +17,10 @@
 		<div data-ng-controller="Data2Controller as data2">
 			<div data-ng-controller="GetChoiceController as ch1">
 				<div data-ng-controller="ShowStatsController">
+					{{data1.getPoke().id}} {{data2.getPoke().id}}
 					<div data-ng-controller="ImgCropController as img1">
 						<div data-ng-controller="ImgCropController as img2">
-						  <div class = "place-button">
+						  <div class = "show-button">
 							<button
 								data-ng-click="img1.showTheImage(data1.getPoke().id); img2.showTheImage(data2.getPoke().id); ch1.getCheck(); unhideStats = !unhideStats"
 								class="btn btn-danger">Show Me!</button>
@@ -53,10 +54,12 @@
 								<strong>{{data1.getPoke().height + data2.getPoke().height | number : 2}} meters</strong> <br/>
 								<strong>{{data1.getPoke().weight + data2.getPoke().weight | number : 1}} kilograms</strong> <br/> <br/>
 								<div data-ng-controller="NameController as nam">								 
-									<h3>Name your creation</h3>
+									<h3>Name it</h3>
 									<input type="text" data-ng-model="name"/>
-									<br/>									
-								  	<button data-ng-click="nam.setName(name)" class="btn btn-success">Finalize</button>
+									<br/>
+									<div class="save-btn">								
+								  		<button data-ng-click="nam.setName(name)" class="btn btn-success">Save</button>
+								  	</div>	
 								</div>
 							</div>
 						</div> <!-- ImgCropController -->
