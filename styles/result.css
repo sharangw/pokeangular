@@ -8,12 +8,12 @@ body {
 	text-align: center;
 }
 
-.place-button {
+.show-button {
     padding: 0px;
     width: 100%;
     margin: 0;
     position: relative;
-    top: -65px;
+    top: -86px;
     left: 413px;
 }
 
@@ -60,8 +60,8 @@ body {
 
 .place-machine-gun {
 	position: absolute;   
-	left:370px;
-	top:360px; 
+	left:750px;
+	top:390px; 
 	z-index:-1;
 }
 
@@ -80,5 +80,13 @@ body {
 	z-index:-1;
 }
 
+.save-btn {
+    	padding: 0px;
+    	width: 100%;
+    	margin: 0;
+    	position: relative;
+    	top: 7px;
+    	left: 37px;
+}
 
 
