@@ -68,9 +68,9 @@ body {
 
 .place-machine-gun {
 	position: absolute;   
-	left:70px;
+	left:450px;
 	top:360px; 
-	z-index:-1;
+	z-index:1;
 }
 
 .crop-wildcard1 {
@@ -90,10 +90,29 @@ body {
     left: 600px;
 }
 
+.opponent-name {
+	font-family: 'Alegreya Sans SC', fantasy;
+	font-weight: bold;
+	color: black;
+	font-size: x-large;
+	position: absolute;    
+	left:800px;
+	top:170px; 
+	z-index:-1;
+}
+
 .opponent {
 	position: absolute;    
 	left:670px;
-	top:120px; 
+	top:190px; 
+	z-index:-1;
+}
+
+.heart {
+	display:none;
+	position: absolute;    
+	left:500px;
+	top:250px; 
 	z-index:-1;
 }
 
@@ -101,7 +120,7 @@ body {
 	font-family: 'Alegreya Sans SC', fantasy;
 	font-weight: bold;
 	color: red;
-	font-size: xx-large;
+	font-size: x-large;
 	position: absolute;    
 	left:300px;
 	top:170px; 
@@ -111,10 +130,21 @@ body {
 .place-winner {
 	font-family: 'Alegreya Sans SC', fantasy;
 	font-weight: bold;
-	color: red;
+	color: purple;
 	font-size: xx-large;
 	position: absolute;    
-	left:600px;
-	top:550px; 
+	left:550px;
+	top:155px; 
+	z-index:-1;
+}
+
+.place-points {
+	font-family: 'Alegreya Sans SC', fantasy;
+	font-weight: bold;
+	color: purple;
+	font-size: x-large;
+	position: absolute;    
+	left:515px;
+	top:200px; 
 	z-index:-1;
 }
