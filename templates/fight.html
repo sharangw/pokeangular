@@ -33,16 +33,16 @@
 								<img data-ng-src="{{img2.image}}" />
 							</div>
 							<div class="place-saber" id = "aniNewSaber">
-								<img data-ng-src="{{ch1.image1}}" />
+								<img id = "saberImg" data-ng-src="{{ch1.image1}}" />
 							</div>
 							<div class="place-bat" id = "aniNewBat">
-								<img data-ng-src="{{ch1.image2}}" />
+								<img id = "batImg" data-ng-src="{{ch1.image2}}" />
 							</div>
 							<div class="place-machine-gun" id = "aniNewGun">
-								<img data-ng-src="{{ch1.image3}}" />
+								<img id = "gunImg" data-ng-src="{{ch1.image3}}"/>
 							</div>
 							<div class="crop-wildcard1" id = "aniNewWild">
-								<img data-ng-src="{{ch1.image4}}" />
+								<img id = "wildImg" data-ng-src="{{ch1.image4}}" />
 							</div>	
 						  	
 							<div data-ng-show="unhideOpp">
@@ -119,6 +119,9 @@
 	</audio>
 	<audio id="kiss"> 
 		<source src="sounds/kiss.mp3" type="audio/mpeg">
+	</audio>
+	<audio id="saber">
+		<source src="sounds/saber.mp3" type="audio/mpeg">
 	</audio>
 </div>
 
