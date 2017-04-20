@@ -254,6 +254,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 	var oppData = this;
 	
 	oppData.oppImage = "";
+	oppData.wildImage = "";
 	oppData.numRand = 0;
 	oppData.gunCount = 0;
 	oppData.heart = 'http://icons.veryicon.com/png/Love/Valentine/heart.png';
@@ -280,8 +281,8 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		
 		var elemOppCh = document.getElementById("aniOpp");
 		var posOppRightOnly = 450;
-		var posOppRight = 410;
-		var posOppTopp = 450;
+		var posOppRight = 450;
+		var posOppTopp = 410;
 		
 		var elemHeadCh = document.getElementById("aniNewHead");
 		var posHeadLeftOnly = 450;
@@ -298,28 +299,55 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		var posGunLeft = 700;
 		var posGunTopp = 610;
 		
-		if (elemOppCh.style.left == posOppRightOnly + 'px') {
+		var elemSaberCh = document.getElementById("aniNewSaber");
+		var posSaberLeftOnly = 770;
+		var posSaberLeft = 720;
+		var posSaberTopp = 510;
+		
+		var elemBatCh = document.getElementById("aniNewBat");
+		var posBatLeftOnly = 420;
+		var posBatLeft = 370;
+		var posBatTopp = 460;
+		
+		var elemWildCh = document.getElementById("aniNewWild");
+		var posWildLeftOnly = 570;
+		var posWildLeft = 520;
+		var posWildTopp = 450;
+		
+		if (elemOppCh.style.left === posOppRightOnly + 'px') {
 			oppData.winner = "";
 			oppData.points = "";
 			var idOppRightOnly = setInterval(moveOppRight, 10);
+		} 
+		
+		if (elemHeadCh.style.left === posHeadLeft + 'px' && elemBotCh.style.left === posBotLeft + 'px') {
+			oppData.winner = "";
+			oppData.points = "";
 			var idHeadCh = setInterval(moveHeadCh, 10);
 			var idBotCh = setInterval(moveBotCh, 10);
 			var idGunCh = setInterval(moveGunCh, 10);
-		} 
+			var idSaberCh = setInterval(moveSaberCh, 10);
+			var idBatCh = setInterval(moveBatCh, 10);
+			var idWildCh = setInterval(moveWildCh, 10);
+		}
 		
-		if (elemHeadCh.style.left == posHeadLeftOnly + 'px' && elemBotCh.style.left == posBotLeftOnly + 'px') {
+		if (elemHeadCh.style.left === posHeadLeftOnly + 'px' && elemBotCh.style.left === posBotLeftOnly + 'px') {
 			oppData.winner = "";
 			oppData.points = "";
 			var idHeadLeftOnly = setInterval(moveHeadLeft, 10);
 			var idBotLeftOnly = setInterval(moveBotLeft, 10);
 			var idGunLeftOnly = setInterval(moveGunLeft, 10);
+			var idSaberLeftOnly = setInterval(moveSaberLeft, 10);
+			var idBatLeftOnly = setInterval(moveBatLeft, 10);
+			var idWildLeftOnly = setInterval(moveWildLeft, 10);
 			var idOppCh = setInterval(moveOppCh, 10);			
+			
 		}
 		
 		// after opponent wins: 
 	
 		function moveOppRight() {
-			if (posOppRightOnly == 670) {
+			if (posOppRightOnly === 670) {
 				clearInterval(idOppRightOnly);
 			} else {
 				posOppRightOnly++; 		
@@ -328,7 +356,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}					
 		
 		function moveHeadCh() {
-			if (posHeadLeft == 150 && posHeadTopp == 200) {
+			if (posHeadLeft === 150 && posHeadTopp === 200) {
 				clearInterval(idHeadCh);
 			} else {
 				posHeadLeft--; 	
@@ -339,7 +367,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}		
 		
 		function moveBotCh() {
-			if (posBotLeft == 150 && posBotTopp == 100) {
+			if (posBotLeft === 150 && posBotTopp === 100) {
 				clearInterval(idBotCh);
 			} else {				
 				posBotLeft--; 	
@@ -350,7 +378,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}
 		
 		function moveGunCh() {
-			if (posGunLeft == 450 && posGunTopp == 360) {
+			if (posGunLeft === 450 && posGunTopp === 360) {
 				clearInterval(idGunCh);
 			} else {
 				posGunLeft--; 	
@@ -360,10 +388,43 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 			}
 		}
 		
+		function moveSaberCh() {
+			if (posSaberLeft === 470 && posSaberTopp === 260) {
+				clearInterval(idSaberCh);
+			} else {
+				posSaberLeft--; 	
+				posSaberTopp--;
+			    elemSaberCh.style.left = posSaberLeft + 'px';
+			    elemSaberCh.style.top = posSaberTopp + 'px';
+			}
+		}
+		
+		function moveBatCh() {
+			if (posBatLeft === 120 && posBatTopp === 210) {
+				clearInterval(idBatCh);
+			} else {
+				posBatLeft--; 	
+				posBatTopp--;
+			    elemBatCh.style.left = posBatLeft + 'px';
+			    elemBatCh.style.top = posBatTopp + 'px';
+			}
+		}
+		
+		function moveWildCh() {
+			if (posWildLeft === 270 && posWildTopp === 200) {
+				clearInterval(idWildCh);
+			} else {
+				posWildLeft--; 	
+				posWildTopp--;
+			    elemWildCh.style.left = posWildLeft + 'px';
+			    elemWildCh.style.top = posWildTopp + 'px';
+			}
+		}
+		
 		// after opponent loses:
 		
 		function moveHeadLeft() {
-			if (posHeadLeftOnly == 150) {
+			if (posHeadLeftOnly === 150) {
 				clearInterval(idHeadLeftOnly);
 			} else {
 				posHeadLeftOnly--; 		
@@ -372,7 +433,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}	
 		
 		function moveBotLeft() {
-			if (posBotLeftOnly == 150) {
+			if (posBotLeftOnly === 150) {
 				clearInterval(idBotLeftOnly);
 			} else {
 				posBotLeftOnly--; 		
@@ -381,7 +442,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}
 		
 		function moveGunLeft() {
-			if (posGunLeftOnly == 450) {
+			if (posGunLeftOnly === 450) {
 				clearInterval(idGunLeftOnly);
 			} else {
 				posGunLeftOnly--; 		
@@ -389,8 +450,35 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 			}
 		}
 		
+		function moveSaberLeft() {
+			if (posSaberLeftOnly === 470) {
+				clearInterval(idSaberLeftOnly);
+			} else {
+				posSaberLeftOnly--; 		
+				elemSaberCh.style.left = posSaberLeftOnly + 'px';
+			}
+		}
+		
+		function moveBatLeft() {
+			if (posBatLeftOnly === 120) {
+				clearInterval(idBatLeftOnly);
+			} else {
+				posBatLeftOnly--; 		
+				elemBatCh.style.left = posBatLeftOnly + 'px';
+			}
+		}
+		
+		function moveWildLeft() {
+			if (posWildLeftOnly === 270) {
+				clearInterval(idWildLeftOnly);
+			} else {
+				posWildLeftOnly--; 		
+				elemWildCh.style.left = posWildLeftOnly + 'px';
+			}
+		}
+		
 		function moveOppCh() {
-			if (posOppRight == 670 && posOppTopp == 190) {
+			if (posOppRight === 670 && posOppTopp === 190) {
 				clearInterval(idOppCh);
 			} else {
 				posOppRight++; 	
@@ -423,7 +511,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 			
 			oppData.battle(1); // opp loses
 			
-		} else if (oppData.oppExp == pokExp) {
+		} else if (oppData.oppExp === pokExp) {
 			
 			oppData.winner = "It's a Tie!";
 			
@@ -458,18 +546,33 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		var posGun = 450;
 		var posGunTop = 360;
 		
+		var elemSaber = document.getElementById("aniNewSaber");
+		var posSaber = 470;
+		var posSaberTop = 260;
+		
+		var elemBat = document.getElementById("aniNewBat");
+		var posBat = 120;
+		var posBatTop = 210;
+		
+		var elemWild = document.getElementById("aniNewWild");
+		var posWild = 270;
+		var posWildTop = 200;
+		
 		var idOpp = setInterval(moveOpp, 10);
 		var idH = setInterval(moveHead, 10);
 		var idB = setInterval(moveBottom, 10);	
 		var idGun = setInterval(moveGun, 10);
+		var idSaber = setInterval(moveSaber, 10);
+		var idBat = setInterval(moveBat, 10);
+		var idWild = setInterval(moveWild, 10);
 		
 		function moveOpp() {
-			if (posOpp == 450 || posOppTop == 450) {
+			if (posOpp === 450 || posOppTop === 450) {
 				clearInterval(idOpp);
 			} else {
 				//posOpp--;			
 				
-				if (exp == 1) {
+				if (exp === 1) {
 					
 					posOpp--;	
 					posOppTop++;					
@@ -477,11 +580,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 					elemOpp.style.left = posOpp + 'px';
 				    elemOpp.style.top = posOppTop + 'px';				    
 				    
-				} else if (exp == 0) {	
+				} else if (exp === 0) {	
 					
 					elemHeart.style.display = 'inline';
 						
-				} else if (exp == -1) {	
+				} else if (exp === -1) {	
 					
 					posOpp--;	
 					elemOpp.style.left = posOpp + 'px';
@@ -496,11 +599,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}					
 		
 		function moveHead() {
-			if (posH == 450 || posHTop == 450) {
+			if (posH === 450 || posHTop === 450) {
 				clearInterval(idH);
 			} else {				 
 				
-				if (exp == -1) {
+				if (exp === -1) {
 					
 					posH++;
 					posHTop++;
@@ -508,11 +611,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 				    elemHead.style.left = posH + 'px'; 
 					elemHead.style.top = posHTop + 'px';
 					
-				} else if (exp == 0) {
+				} else if (exp === 0) {
 					
 					elemHeart.style.display = 'inline';
 					
-				} else if (exp == 1) {
+				} else if (exp === 1) {
 					
 					posH++;
 				    elemHead.style.left = posH + 'px'; 
@@ -523,11 +626,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}		
 		
 		function moveBottom() {
-			if (posB == 450 || posBTop == 350) {
+			if (posB === 450 || posBTop === 350) {
 				clearInterval(idB);
 			} else {
 				
-				if (exp == -1) {					
+				if (exp === -1) {					
 
 					posB++; 
 					posBTop++;
@@ -535,11 +638,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 				    elemBottom.style.left = posB + 'px';
 					elemBottom.style.top = posBTop + 'px';
 					
-				} else if (exp == 0) {
+				} else if (exp === 0) {
 					
 					elemHeart.style.display = 'inline';
 					
-				} else if (exp == 1) {					
+				} else if (exp === 1) {					
 
 					posB++; 
 				    elemBottom.style.left = posB + 'px';
@@ -550,11 +653,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}
 		
 		function moveGun() {
-			if (posGun == 750 || posGunTop == 610) {
+			if (posGun === 750 || posGunTop === 610) {
 				clearInterval(idGun);
 			} else {				 
 				
-				if (exp == -1) {
+				if (exp === -1) {
 					
 					posGun++;
 					posGunTop++;
@@ -562,11 +665,11 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 				    elemGun.style.left = posGun + 'px'; 
 					elemGun.style.top = posGunTop + 'px';
 					
-				} else if (exp == 0) {
+				} else if (exp === 0) {
 					
 					elemHeart.style.display = 'inline';
 					
-				} else if (exp == 1) {
+				} else if (exp === 1) {
 					
 					posGun++;
 				    elemGun.style.left = posGun + 'px'; 
@@ -575,70 +678,179 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 				
 			}
 		}	
+		
+		function moveSaber() {
+			if (posSaber === 770 || posSaberTop === 510) {
+				clearInterval(idSaber);
+			} else {				 
+				
+				if (exp === -1) {
+					
+					posSaber++;
+					posSaberTop++;
+					elemSaber.style.zIndex = "-2";
+				    elemSaber.style.left = posSaber + 'px'; 
+					elemSaber.style.top = posSaberTop + 'px';
+					
+				} else if (exp === 0) {
+					
+					elemHeart.style.display = 'inline';
+					
+				} else if (exp === 1) {
+					
+					posSaber++;
+				    elemSaber.style.left = posSaber + 'px'; 
+					elemSaber.style.zIndex = "0";
+				}			
+				
+			}
+		}
+		
+		function moveBat() {
+			if (posBat === 420 || posBatTop === 460) {
+				clearInterval(idBat);
+			} else {				 
+				
+				if (exp === -1) {
+					
+					posBat++;
+					posBatTop++;
+					elemBat.style.zIndex = "-2";
+					elemBat.style.left = posBat + 'px'; 
+					elemBat.style.top = posBatTop + 'px';
+					
+				} else if (exp === 0) {
+					
+					elemHeart.style.display = 'inline';
+					
+				} else if (exp === 1) {
+					
+					posBat++;
+					elemBat.style.left = posBat + 'px'; 
+					elemBat.style.zIndex = "0";
+				}			
+				
+			}
+		}
+		
+		function moveWild() {
+			if (posWild === 570 || posWildTop === 450) {
+				clearInterval(idWild);
+			} else {				 
+				
+				if (exp === -1) {
+					
+					posWild++;
+					posWildTop++;
+					elemWild.style.zIndex = "-2";
+					elemWild.style.left = posWild + 'px'; 
+					elemWild.style.top = posWildTop + 'px';
+					
+				} else if (exp === 0) {
+					
+					elemHeart.style.display = 'inline';
+					
+				} else if (exp === 1) {
+					
+					posWild++;
+					elemWild.style.left = posWild + 'px'; 
+					elemWild.style.zIndex = "0";
+				}			
+				
+			}
+		}
 	}
 	
 	oppData.showSaber = function() {
 		
 		var elemSaber = document.getElementById("aniNewSaber");
-		var posS = 260;
-		var posSmore = 470;
-		var idS = setInterval(moveSaber, 50);	
-		var idSmore;
+		var elemSaberImg = document.getElementById("saberImg");
 		
-		function moveSaber() {
-			if (posS == 160) {				
-				clearInterval(idS);
-				idSmore = setInterval(moveSaberMore, 50);
-			} else {
-				posS--;  
-			    elemSaber.style.top = posS + 'px'; 
-			}
+		var posSLeft = 470;
+		
+		var idSaber = setInterval(moveSaber, 10);	
+		var idSaberBack;
+		
+		if (elemSaberImg.src !== "") {
+			console.log("saber yes");	
+			saber.play();
 		}
 		
-		function moveSaberMore() {
-			if (posSmore == 670) {				
-				clearInterval(idSmore);
-			} else {
-				posSmore++;  
-			    elemSaber.style.left = posSmore + 'px'; 
-			}
+		if (elemSaber.style.left === "470px") {
+			console.log("move saber");
+		}
+		
+		if (elemSaber.style.left === "790px") {
+			console.log("saber go back");
+			idSaberBack = setInterval(moveSaberBack, 10);
+		}
+		
+		function moveSaber() {
+			elemSaber.style.left = "790px";
+			clearInterval(idSaber);
+//			if (posSLeft === 790) {				
+//				clearInterval(idSaber);
+//			} else {
+//				posSLeft++;  
+//			    elemSaber.style.left = posSLeft + 'px'; 
+//			}
+		}
+		
+		function moveSaberBack() {
+			console.log("going back");
+			elemSaber.style.left = "470px";
+			clearInterval(idSaberBack);
 		}
 	}
 	
 	oppData.showBat = function() {
 		
-		var elemBat = document.getElementById("aniNewBat");
-		var posBa = 200;
-		var idBa = setInterval(moveBat, 10);	
+		var elemBat = document.getElementById("aniNewBat");	
+		var elemBatImg = document.getElementById("batImg");
 		
-		function moveBat() {
-			if (posBa == 600) {
-				clearInterval(idBa);
-			} else {
-				posBa++;  
-			    elemBat.style.left = posBa + 'px'; 
-			}
+		elemBat.style.zIndex = 0;
+		
+		var idBatRight = setInterval(moveBatRight, 10);
+		
+		if (elemBatImg.src != "") {
+			console.log("batarang yes");
 		}
 		
+		if (elemBat.style.left === "750px") {
+			var idBatLeft = setInterval(moveBatLeft, 10);
+		}
+			
+		function moveBatRight() { 
+			elemBat.style.left = "750px";
+			clearInterval(idBatRight);
+		}
+		
+		function moveBatLeft() {
+			elemBat.style.left = "120px";
+			clearInterval(idBatLeft);
+		}			
 	}
 	
 	oppData.showGun = function() {
 		
 		var elemGun = document.getElementById("aniNewGun");
+		var elemGunImg = document.getElementById("gunImg");
+		
 		var posG = 360;
-		var posGdown = 330;
-		var idG = setInterval(moveGunUp, 10);	
+		var posGdown = 345;
+		var idG;	
 		var idGdown;
 		
-		var gun = document.getElementById("gun");
-		if (elemGun.style.top == 360 + 'px') {			
+		if (elemGunImg.src !== "") {		
+			console.log("gun yes");
 			gun.play();
 			oppData.gunCount++;
 			oppData.oppExp -= 10;
-		}
+			idG = setInterval(moveGunUp, 10);			
+		} 
 		
 		function moveGunUp() {
-			if (posG == 330) {
+			if (posG === 345) {
 				clearInterval(idG);
 				idGdown = setInterval(moveGunDown, 10);
 			} else {
@@ -648,7 +860,7 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 		}
 		
 		function moveGunDown() {
-			if (posGdown == 360) {
+			if (posGdown === 360) {
 				clearInterval(idGdown);
 				idG = setInterval(moveGunUp, 10);
 			} else {
@@ -662,17 +874,12 @@ angular.module("PokeModule").controller("OpponentController", function(MyPokeSer
 	oppData.showWild = function() {
 		
 		var elemWild = document.getElementById("aniNewWild");
-		var posW = 200;
-		var idW = setInterval(moveWild, 10);	
+		var elemWildImg = document.getElementById("wildImg");
 		
-		function moveWild() {
-			if (posW == 400) {
-				clearInterval(idW);
-			} else {
-				posW++;  
-			    elemWild.style.left = posW + 'px'; 
-			}
+		if (elemWildImg.src != "") {
+			console.log("wildcard yes");
 		}
+		
 		
 	}
 	
@@ -701,8 +908,3 @@ angular.module("PokeModule").controller("ShowStatsController", function($scope) 
 	}
 	
 });
-
-
-
-
-
