@@ -21,7 +21,7 @@ body {
 	
     position: relative;
     top: 25px;
-    left: 50px;
+    left: 35px;
 	
 }
 
@@ -55,15 +55,15 @@ body {
 	position: absolute;   
 	left:470px;
 	top:260px; 
-	z-index:-1;
+	z-index:1;
 	
 }
 
 .place-bat {
 	position: absolute;   
-	left:70px;
+	left:120px;
 	top:210px; 
-	z-index:-1;
+	z-index:1;
 }
 
 .place-machine-gun {
@@ -78,7 +78,7 @@ body {
 	clip: rect(0px,475px,200px,0px);     
 	left:270px;
 	top:200px; 
-	z-index:-1;
+	z-index:1;
 }
 
 .battle-button {
