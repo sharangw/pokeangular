@@ -9,6 +9,7 @@
 
 ## The App
 * In this application, one can combine the head of a pokémon and the body of another to create a whole new pokémon and fight with it against random pokémons.
+* The app is available at: https://sharangw.github.io/pokeangular/#/
 
 
 
